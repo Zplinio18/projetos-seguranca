@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background: #f5f7fb;
+}
+body {
+  margin: 0;
+}
+
+.thin-scroll {
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+}
+
+.thin-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.thin-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+}
+
+.thin-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.thin-scroll:hover {
+  scrollbar-color: rgba(255, 255, 255, 0.6) transparent;
+}
+
+/* ====== Animações ====== */
+:root {
+  /* valores padrão — podes sobrescrever inline com --duration e --delay */
+  --anim-duration: 4000ms;
+  --anim-delay: 8ms;
+  --anim-ease: cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+/* Fade in simples */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide in vindo da esquerda + fade */
+@keyframes slideLeftFade {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in vindo da direita + fade */
+@keyframes slideRightFade {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Destaques rotativos na seção inicial mobile */
+@keyframes welcomeHighlight {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  10%,
+  28% {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+  36%,
+  100% {
+    opacity: 0;
+    transform: translateY(-68px);
+  }
+}
+
+/* Classes utilitárias */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.animate-fade-in {
+  animation-name: fadeIn;
+  animation-duration: var(--anim-duration);
+  animation-timing-function: var(--anim-ease);
+  animation-fill-mode: both;
+  animation-delay: var(--anim-delay);
+}
+
+.animate-slide-left-fade {
+  animation-name: slideLeftFade;
+  animation-duration: var(--anim-duration);
+  animation-timing-function: var(--anim-ease);
+  animation-fill-mode: both;
+  animation-delay: var(--anim-delay);
+}
+
+.animate-slide-right-fade {
+  animation-name: slideRightFade;
+  animation-duration: var(--anim-duration);
+  animation-timing-function: var(--anim-ease);
+  animation-fill-mode: both;
+  animation-delay: var(--anim-delay);
+}
+
+.animate-welcome-highlight {
+  animation-name: welcomeHighlight;
+  animation-duration: 12s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+/* Respeitar preferências de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-left-fade,
+  .animate-slide-right-fade,
+  .animate-welcome-highlight {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
