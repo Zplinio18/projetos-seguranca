@@ -6,7 +6,7 @@ Interface demonstrativa de controle de acesso baseado em papéis (*Role-Based Ac
 
 ### Link do projeto hospedado
 
-> Adicione aqui o link após publicar o projeto: `[Acessar demonstração]()`
+`[Acessar demonstração]()`
 
 ### Onde encontrar o código
 
