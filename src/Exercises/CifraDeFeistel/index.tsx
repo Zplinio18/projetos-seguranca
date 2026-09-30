@@ -64,7 +64,7 @@ function FeistelExercise() {
           Exercício 04
         </p>
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Cifra de Feistel — 16 rodadas
+          Cifra de Feistel - 16 rodadas
         </h1>
         <p className="mt-3 max-w-3xl text-slate-400">
           Demonstração didática de uma rede de Feistel: a função{" "}
