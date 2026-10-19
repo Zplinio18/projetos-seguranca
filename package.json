@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "bbs:nist": "node src/Exercises/BlumBlumShub/generate.ts",
+    "dh": "node src/Exercises/DiffieHellman/generate.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "preview": "vite preview",

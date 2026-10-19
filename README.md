@@ -6,7 +6,7 @@ Interface demonstrativa de controle de acesso baseado em papéis (_Role-Based Ac
 
 ### Link do projeto hospedado
 
->[Clique aqui para acessar a demonstração do RBAC](https://projetos-seguranca.vercel.app/RBAC)
+> [Clique aqui para acessar a demonstração do RBAC](https://projetos-seguranca.vercel.app/RBAC)
 
 ### Onde encontrar o código
 
@@ -30,7 +30,7 @@ Implementação da Cifra de César com chave de 1 a 26 e análise da ocorrência
 
 ### Link do projeto hospedado
 
->[Clique aqui para acessar a demonstração da Cifra de César](https://projetos-seguranca.vercel.app/cifra-de-cesar)
+> [Clique aqui para acessar a demonstração da Cifra de César](https://projetos-seguranca.vercel.app/cifra-de-cesar)
 
 ### Caminho do algoritmo
 
@@ -46,7 +46,7 @@ Implementação didática de uma rede de Feistel com 16 rodadas. A função `F` 
 
 ### Link do projeto hospedado
 
->[Clique aqui para acessar a demonstração da Cifra de Feistel](https://projetos-seguranca.vercel.app/cifra-de-feistel)
+> [Clique aqui para acessar a demonstração da Cifra de Feistel](https://projetos-seguranca.vercel.app/cifra-de-feistel)
 
 ### Caminho do algoritmo
 
@@ -59,3 +59,31 @@ src/Exercises/CifraDeFeistel/algorithm.ts
 1. Execute `npm install` para instalar as dependências.
 2. Execute `npm run dev`.
 3. Acesse `http://localhost:5173/cifra-de-feistel`.
+
+## Exercício 07 — Blum Blum Shub + Teste na Suite do NIST
+
+### Como executar
+
+Execute o comando abaixo na raiz do projeto para gerar 1.000.000 de bits:
+
+```bash
+npm run bbs:nist
+```
+
+Para escolher outra quantidade de bits, execute:
+
+```bash
+node src/Exercises/BlumBlumShub/generate.ts 100000
+```
+
+O script cria `bb_bits.txt`, formatado em linhas curtas para leitura, e `bb_bits_nist.txt`, sem quebras de linha, para inserir no testador.
+
+## Diffie-Hellman (DH) — Compartilhamento de segredo
+
+### Como executar
+
+Execute o comando abaixo na raiz do projeto. Ele imprime os valores escolhidos de `p`, `g`, `a`, `b`, os valores públicos `A` e `B`, e o segredo compartilhado `s`:
+
+```bash
+npm run dh
+```

@@ -1,6 +1,8 @@
 import RbacExercise from "./Exercises/RBAC";
 import CaesarExercise from "./Exercises/CifraDeCesar";
 import FeistelExercise from "./Exercises/CifraDeFeistel";
+import BlumBlumShubExercise from "./Exercises/BlumBlumShub";
+import DiffieHellmanExercise from "./Exercises/DiffieHellman";
 
 function App() {
   const path = window.location.pathname.toLowerCase();
@@ -12,6 +14,10 @@ function App() {
   if (path === "/cifra-de-feistel" || path === "/cifra-de-feistel/") {
     return <FeistelExercise />;
   }
+  if (path === "/blum-blum-shub" || path === "/blum-blum-shub/")
+    return <BlumBlumShubExercise />;
+  if (path === "/diffie-hellman" || path === "/diffie-hellman/")
+    return <DiffieHellmanExercise />;
 
   return (
     <main className="min-h-screen bg-slate-950 p-6 text-slate-100 sm:p-10">
@@ -80,6 +86,40 @@ function App() {
                   <td className="px-5 py-5 text-right">
                     <a
                       href="/cifra-de-feistel"
+                      className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
+                    >
+                      Abrir
+                    </a>
+                  </td>
+                </tr>
+                <tr className="transition hover:bg-slate-800/40">
+                  <td className="px-5 py-5 font-mono font-bold text-cyan-300">
+                    07
+                  </td>
+                  <td className="px-5 py-5 font-semibold">Blum Blum Shub</td>
+                  <td className="px-5 py-5 text-sm text-slate-400">
+                    Geração de bits pseudoaleatórios para análise NIST.
+                  </td>
+                  <td className="px-5 py-5 text-right">
+                    <a
+                      href="/blum-blum-shub"
+                      className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
+                    >
+                      Abrir
+                    </a>
+                  </td>
+                </tr>
+                <tr className="transition hover:bg-slate-800/40">
+                  <td className="px-5 py-5 font-mono font-bold text-cyan-300">
+                    08
+                  </td>
+                  <td className="px-5 py-5 font-semibold">Diffie-Hellman</td>
+                  <td className="px-5 py-5 text-sm text-slate-400">
+                    Troca de chaves e cálculo de segredo compartilhado.
+                  </td>
+                  <td className="px-5 py-5 text-right">
+                    <a
+                      href="/diffie-hellman"
                       className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
                     >
                       Abrir
