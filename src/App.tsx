@@ -1,3 +1,4 @@
+import { useEffect, useState, type MouseEvent } from "react";
 import RbacExercise from "./Exercises/RBAC";
 import CaesarExercise from "./Exercises/CifraDeCesar";
 import FeistelExercise from "./Exercises/CifraDeFeistel";
@@ -5,8 +6,31 @@ import BlumBlumShubExercise from "./Exercises/BlumBlumShub";
 import DiffieHellmanExercise from "./Exercises/DiffieHellman";
 import HashXorExercise from "./Exercises/HashXor";
 
+function getCurrentPath() {
+  return window.location.pathname.toLowerCase();
+}
+
 function App() {
-  const path = window.location.pathname.toLowerCase();
+  const [path, setPath] = useState(getCurrentPath);
+
+  useEffect(() => {
+    const updatePath = () => setPath(getCurrentPath());
+    window.addEventListener("popstate", updatePath);
+    return () => window.removeEventListener("popstate", updatePath);
+  }, []);
+
+  function navigate(to: string) {
+    window.history.pushState(null, "", to);
+    setPath(to.toLowerCase());
+    window.scrollTo({ top: 0 });
+  }
+
+  function handleNavigation(event: MouseEvent<HTMLAnchorElement>, to: string) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey)
+      return;
+    event.preventDefault();
+    navigate(to);
+  }
 
   if (path === "/rbac" || path === "/rbac/") return <RbacExercise />;
   if (path === "/cifra-de-cesar" || path === "/cifra-de-cesar/") {
@@ -54,6 +78,7 @@ function App() {
                   <td className="px-5 py-5 text-right">
                     <a
                       href="/RBAC"
+                      onClick={(event) => handleNavigation(event, "/RBAC")}
                       className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
                     >
                       Abrir
@@ -71,6 +96,9 @@ function App() {
                   <td className="px-5 py-5 text-right">
                     <a
                       href="/cifra-de-cesar"
+                      onClick={(event) =>
+                        handleNavigation(event, "/cifra-de-cesar")
+                      }
                       className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
                     >
                       Abrir
@@ -88,6 +116,9 @@ function App() {
                   <td className="px-5 py-5 text-right">
                     <a
                       href="/cifra-de-feistel"
+                      onClick={(event) =>
+                        handleNavigation(event, "/cifra-de-feistel")
+                      }
                       className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
                     >
                       Abrir
@@ -105,6 +136,9 @@ function App() {
                   <td className="px-5 py-5 text-right">
                     <a
                       href="/blum-blum-shub"
+                      onClick={(event) =>
+                        handleNavigation(event, "/blum-blum-shub")
+                      }
                       className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
                     >
                       Abrir
@@ -122,6 +156,9 @@ function App() {
                   <td className="px-5 py-5 text-right">
                     <a
                       href="/diffie-hellman"
+                      onClick={(event) =>
+                        handleNavigation(event, "/diffie-hellman")
+                      }
                       className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
                     >
                       Abrir
@@ -139,6 +176,7 @@ function App() {
                   <td className="px-5 py-5 text-right">
                     <a
                       href="/hash-xor"
+                      onClick={(event) => handleNavigation(event, "/hash-xor")}
                       className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
                     >
                       Abrir

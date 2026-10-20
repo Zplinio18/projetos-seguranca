@@ -182,12 +182,6 @@ function FeistelExercise() {
                   {notice}
                 </p>
               )}
-              <div className="mt-5 border-t border-slate-800 pt-4 text-xs leading-5 text-slate-500">
-                <strong className="text-slate-300">Observação:</strong> esta é
-                uma implementação para estudo, sem pretensão de segurança de
-                produção. Algoritmos modernos autenticados, como AES-GCM, devem
-                ser usados em sistemas reais.
-              </div>
             </section>
           </div>
         )}
