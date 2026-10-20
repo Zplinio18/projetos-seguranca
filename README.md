@@ -114,3 +114,23 @@ Execute o comando abaixo na raiz do projeto. Ele imprime os valores escolhidos d
 ```bash
 npm run dh
 ```
+
+## Exercício 09 — Hash com XOR e rotação
+
+Implementação didática de um hash de 32 bits que combina os bytes do texto com operações de XOR e rotação de bits.
+
+### Onde encontrar o código
+
+```text
+src/Exercises/HashXor/
+├── algorithm.ts
+└── index.tsx
+```
+
+### Como executar
+
+Execute `npm run dev` na raiz do projeto e acesse:
+
+```text
+http://localhost:5173/hash-xor
+```

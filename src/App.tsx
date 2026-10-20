@@ -3,6 +3,7 @@ import CaesarExercise from "./Exercises/CifraDeCesar";
 import FeistelExercise from "./Exercises/CifraDeFeistel";
 import BlumBlumShubExercise from "./Exercises/BlumBlumShub";
 import DiffieHellmanExercise from "./Exercises/DiffieHellman";
+import HashXorExercise from "./Exercises/HashXor";
 
 function App() {
   const path = window.location.pathname.toLowerCase();
@@ -18,6 +19,7 @@ function App() {
     return <BlumBlumShubExercise />;
   if (path === "/diffie-hellman" || path === "/diffie-hellman/")
     return <DiffieHellmanExercise />;
+  if (path === "/hash-xor" || path === "/hash-xor/") return <HashXorExercise />;
 
   return (
     <main className="min-h-screen bg-slate-950 p-6 text-slate-100 sm:p-10">
@@ -120,6 +122,23 @@ function App() {
                   <td className="px-5 py-5 text-right">
                     <a
                       href="/diffie-hellman"
+                      className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
+                    >
+                      Abrir
+                    </a>
+                  </td>
+                </tr>
+                <tr className="transition hover:bg-slate-800/40">
+                  <td className="px-5 py-5 font-mono font-bold text-cyan-300">
+                    09
+                  </td>
+                  <td className="px-5 py-5 font-semibold">Hash com XOR</td>
+                  <td className="px-5 py-5 text-sm text-slate-400">
+                    Hash didático de 32 bits com XOR e rotação.
+                  </td>
+                  <td className="px-5 py-5 text-right">
+                    <a
+                      href="/hash-xor"
                       className="inline-flex rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
                     >
                       Abrir
