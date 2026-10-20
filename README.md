@@ -115,7 +115,7 @@ Execute o comando abaixo na raiz do projeto. Ele imprime os valores escolhidos d
 npm run dh
 ```
 
-## Exercício 09 — Hash com XOR e rotação
+## Exercício 09 - Hash com XOR e rotação
 
 Implementação didática de um hash de 32 bits que combina os bytes do texto com operações de XOR e rotação de bits.
 
