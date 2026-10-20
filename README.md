@@ -24,6 +24,33 @@ src/
 
 Para visualizar localmente, execute `npm run dev` e acesse `/RBAC`.
 
+## Exercício 02 — OAuth 2.0 do Google
+
+Implementação independente do fluxo de autenticação OAuth 2.0 do Google com Bun, Express e `google-auth-library`.
+
+### Onde encontrar o código
+
+```text
+src/Exercises/google-oauth-express/
+├── public/index.html
+├── src/index.js
+├── process.env.example
+├── package.json
+└── bun.lock
+```
+
+### Como executar a partir da raiz do projeto
+
+1. Preencha o `GOOGLE_CLIENT_SECRET` no arquivo local `src/Exercises/google-oauth-express/process.env`.
+2. Na raiz do repositório, execute:
+
+```bash
+cd src/Exercises/google-oauth-express
+npx --yes bun --env-file=process.env src/index.js
+```
+
+3. Abra `http://localhost:3000` no navegador. Não abra o arquivo `public/index.html` diretamente.
+
 ## Cifra de César e Criptoanálise
 
 Implementação da Cifra de César com chave de 1 a 26 e análise da ocorrência de letras do texto cifrado.
