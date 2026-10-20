@@ -24,7 +24,7 @@ src/
 
 Para visualizar localmente, execute `npm run dev` e acesse `/RBAC`.
 
-## Exercício 02 — OAuth 2.0 do Google
+## Exercício 02 - OAuth 2.0 do Google
 
 Implementação independente do fluxo de autenticação OAuth 2.0 do Google com Bun, Express e `google-auth-library`.
 
@@ -87,7 +87,7 @@ src/Exercises/CifraDeFeistel/algorithm.ts
 2. Execute `npm run dev`.
 3. Acesse `http://localhost:5173/cifra-de-feistel`.
 
-## Exercício 07 — Blum Blum Shub + Teste na Suite do NIST
+## Exercício 07 - Blum Blum Shub + Teste na Suite do NIST
 
 ### Como executar
 
@@ -105,7 +105,7 @@ node src/Exercises/BlumBlumShub/generate.ts 100000
 
 O script cria `bb_bits.txt`, formatado em linhas curtas para leitura, e `bb_bits_nist.txt`, sem quebras de linha, para inserir no testador.
 
-## Diffie-Hellman (DH) — Compartilhamento de segredo
+## Diffie-Hellman (DH) - Compartilhamento de segredo
 
 ### Como executar
 
